@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170809212412) do
+ActiveRecord::Schema.define(version: 20170809223401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,11 +45,12 @@ ActiveRecord::Schema.define(version: 20170809212412) do
     t.text "content", null: false
     t.string "noteable_type", null: false
     t.bigint "noteable_id", null: false
+    t.string "sender_type", null: false
     t.bigint "sender_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["noteable_type", "noteable_id"], name: "index_notes_on_noteable_type_and_noteable_id"
-    t.index ["sender_id"], name: "index_notes_on_sender_id"
+    t.index ["sender_type", "sender_id"], name: "index_notes_on_sender_type_and_sender_id"
   end
 
   create_table "rules", force: :cascade do |t|
@@ -65,16 +66,11 @@ ActiveRecord::Schema.define(version: 20170809212412) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.integer "grade_level", default: 1
-    t.bigint "team_id", null: false
-    t.string "shirt_size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["team_id"], name: "index_students_on_team_id"
   end
 
   create_table "teachers", force: :cascade do |t|
-    t.boolean "administrator", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -85,6 +81,24 @@ ActiveRecord::Schema.define(version: 20170809212412) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["teacher_id"], name: "index_teams_on_teacher_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "hero_name"
+    t.string "superpower"
+    t.string "gender"
+    t.boolean "administrator", default: false
+    t.integer "grade_level"
+    t.bigint "team_id"
+    t.string "shirt_size"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_users_on_team_id"
   end
 
 end
