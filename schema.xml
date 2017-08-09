@@ -32,7 +32,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="324" y="95" name="users">
+</datatypes><table x="945" y="179" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -61,7 +61,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="321" y="331" name="teachers">
+<table x="395" y="127" name="teachers">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -75,7 +75,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="875" y="222" name="students">
+<table x="796" y="329" name="students">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -96,7 +96,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="595" y="378" name="teams">
+<table x="594" y="368" name="teams">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -111,7 +111,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="582" y="247" name="detentions">
+<table x="574" y="230" name="detentions">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -125,6 +125,9 @@
 </row>
 <row name="reason" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="date" null="1" autoincrement="0">
+<datatype>DATETIME</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
@@ -155,7 +158,7 @@
 </key>
 <comment>Polymorphic</comment>
 </table>
-<table x="1056" y="228" name="grades">
+<table x="799" y="219" name="grades">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -166,6 +169,47 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="students" row="id" />
 </row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="411" y="269" name="rules">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="teacher_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="teachers" row="id" />
+</row>
+<row name="attribute" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="criteria" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="value" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="modifier" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="active" null="1" autoincrement="0">
+<datatype>BINARY</datatype>
+<default>'true'</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="734" y="110" name="approved_teachers">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="code" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="email" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
