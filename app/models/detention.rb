@@ -1,0 +1,2 @@
+class Detention < ApplicationRecord
+end
