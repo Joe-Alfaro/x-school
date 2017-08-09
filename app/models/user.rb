@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  validates :first_name, :last_name, :email, :password_digest
+  validates :email, :password_digest, :first_name, :last_name, :hero_name, :superpower, :gender, presence: true
 end

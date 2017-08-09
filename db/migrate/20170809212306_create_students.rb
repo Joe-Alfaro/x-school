@@ -9,8 +9,8 @@ class CreateStudents < ActiveRecord::Migration[5.1]
       t.string :superpower
       t.string :gender
 
-      t.integer :grade_level, default: 1
-      t.references :team, null: false
+      t.integer :grade_level, default: 6
+      t.references :team
       t.string :shirt_size
 
       t.timestamps
