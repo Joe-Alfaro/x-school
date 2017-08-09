@@ -1,0 +1,2 @@
+class ApprovedTeacher < ApplicationRecord
+end
