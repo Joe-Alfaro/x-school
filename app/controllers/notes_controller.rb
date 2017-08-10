@@ -9,11 +9,19 @@ class NotesController < ApplicationController
   end
 
   def new
+    if params[:student_id]
+      @recipient = Student.find(params[:student_id])
+      @route = student_notes_path
+    else
+      @recipient = Teacher.find(params[:teacher_id])
+      @route = teacher_notes_path
+    end
     @note = Note.new
   end
 
   def create
-    @note = Note.new(teacher_params)
+    @note = Note.create(note_params)
+    redirect_to '/'
   end
 
   def edit
@@ -27,12 +35,12 @@ class NotesController < ApplicationController
   def destroy
   end
 
-  def get_teams
+  def get_note
     @note = Note.find(params[:id])
   end
 
   private
-    def team_params
+    def note_params
       params.require(:note).permit(:content, :noteable_id, :sender_id, :noteable_type, :sender_type)
     end
 

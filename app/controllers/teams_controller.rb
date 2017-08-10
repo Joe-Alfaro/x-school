@@ -13,7 +13,7 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.new(teacher_params)
+    @team = Team.create(teacher_params)
   end
 
   def edit
