@@ -91,7 +91,7 @@ end
     administrator: false,
     grade_level: rand(6..12),
     shirt_size: %w(xs s m l xl xxl).sample,
-    team: Team.all.sample.id
+    team_id: Team.all.sample.id
     })
 end
 
