@@ -14,7 +14,7 @@ Teacher.create!({
   last_name: 'Xavier',
   hero_name: 'Professor X',
   superpower: 'telepathy',
-  gender: 'male',
+  gender: 'm',
   administrator: true
   })
 
@@ -25,7 +25,7 @@ Teacher.create!({
   last_name: 'Jackman',
   hero_name: 'Wolverine',
   superpower: 'instant healing',
-  gender: 'male',
+  gender: 'm',
   administrator: false
   })
 
@@ -36,7 +36,7 @@ Teacher.create!({
   last_name: 'Summers',
   hero_name: 'Cyclops',
   superpower: 'laser-y eyes',
-  gender: 'male',
+  gender: 'm',
   administrator: true
   })
 
