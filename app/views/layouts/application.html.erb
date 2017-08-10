@@ -13,6 +13,24 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="/">X-School</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="/teams">Teams</a>
+            <a class="nav-item nav-link" href="/teachers">Teachers</a>
+            <a class="nav-item nav-link" href="/students">Students</a>
+            <a class="nav-item nav-link" href="/profile">Profile</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
