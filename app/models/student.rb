@@ -10,4 +10,8 @@ class Student < User
   validates_inclusion_of :grade_level, in: 6..12
   validates_inclusion_of :shirt_size, in: %w(xs s m l xl xxl)
   validates_inclusion_of :administrator, in: [false]
+
+  def gpa
+    self.grades.
+  end
 end
