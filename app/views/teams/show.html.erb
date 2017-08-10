@@ -1,0 +1,8 @@
+<h1><%= @team.name %></h1>
+
+<h2>Team Leader: <%= @team.teacher.first_name + ' ' + @team.teacher.last_name %></h2>
+
+<h2>Team Members:</h2>
+<%= render @team.students %>
+
+<h2>Stats:</h2>
