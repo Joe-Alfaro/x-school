@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
 
-  has_secure_password
+   devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
 end
