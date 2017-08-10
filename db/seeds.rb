@@ -58,7 +58,7 @@ Teacher.create!({
   Teacher.create!({
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    email: hero_name.sub(" ", "_") + domain,
+    email: hero_name.split(" ").join("_") + domain,
     password: 'password',
     hero_name: hero_name,
     superpower: Faker::Superhero.power,
@@ -83,7 +83,7 @@ end
   Student.create!({
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    email: hero_name.sub(" ", "_") + domain,
+    email: hero_name.split(" ").join("_") + domain,
     password: 'password',
     hero_name: hero_name,
     superpower: Faker::Superhero.power,
