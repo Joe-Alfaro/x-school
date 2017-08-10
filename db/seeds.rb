@@ -1,3 +1,11 @@
+Note.destroy_all
+Grade.destroy_all
+Detention.destroy_all
+ApprovedTeacher.destroy_all
+Team.destroy_all
+Teacher.destroy_all
+Student.destroy_all
+
 #Teacher seeds
 Teacher.create!({
   email: 'prof.x@xmen.com',

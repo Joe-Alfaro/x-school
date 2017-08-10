@@ -6,5 +6,5 @@ class Teacher < User
   has_many :sent_notes, class_name: "Note", foreign_key: :sender
   has_many :students, through: :team
 
-  validates :administrator, presence: true
+  # validates :administrator, presence: true
 end
