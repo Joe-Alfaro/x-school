@@ -20,7 +20,8 @@ class TeamsController < ApplicationController
   end
 
   def update
-    @team = Team.update(teacher_params)
+    @team.update(teacher_params)
+    @team.save
   end
 
   def destroy

@@ -20,7 +20,8 @@ class TeachersController < ApplicationController
   end
 
   def update
-    @teacher = Teacher.update(teacher_params)
+    @teacher.update(teacher_params)
+    @teacher.save
   end
 
   def destroy
