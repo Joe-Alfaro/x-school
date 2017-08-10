@@ -1,3 +1,9 @@
 <h1>Students</h1>
 
-<%= render @students %>
+<%= render partial: 'studentlist',
+  locals: {students: @students,
+  columns: {:hero_name => 'Hero Name',
+   :superpower => 'Superpower',
+   :gender => 'Gender',
+   :grade_level => 'Grade Level',
+   :shirt_size => 'Shirt Size'}} %>
