@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :teachers
   resources :teams
 
-  # Change from Andrea for Devise testing
+  # Changes from Andrea for Devise build
   root to: "home#index"
+  devise_for :students
+  devise_for :teachers
 
 end
