@@ -1,0 +1,10 @@
+<tr>
+  <td>
+    <a href="/students/<%= student.id %>"><%= student.first_name + ' ' + student.last_name %></a>
+  </td>
+  <% columns.each do |k, v| %>
+  <td>
+    <%= student.send(k) %>
+  </td>
+  <% end %>
+</tr>

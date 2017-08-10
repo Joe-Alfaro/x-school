@@ -14,7 +14,7 @@ Teacher.create!({
   last_name: 'Xavier',
   hero_name: 'Professor X',
   superpower: 'telepathy',
-  gender: 'male',
+  gender: 'm',
   administrator: true
   })
 
@@ -25,7 +25,7 @@ Teacher.create!({
   last_name: 'Jackman',
   hero_name: 'Wolverine',
   superpower: 'instant healing',
-  gender: 'male',
+  gender: 'm',
   administrator: false
   })
 
@@ -36,7 +36,7 @@ Teacher.create!({
   last_name: 'Summers',
   hero_name: 'Cyclops',
   superpower: 'laser-y eyes',
-  gender: 'male',
+  gender: 'm',
   administrator: true
   })
 
@@ -58,7 +58,7 @@ Teacher.create!({
   Teacher.create!({
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    email: hero_name.sub(" ", "_") + domain,
+    email: hero_name.split(" ").join("_") + domain,
     password: 'password',
     hero_name: hero_name,
     superpower: Faker::Superhero.power,
@@ -83,7 +83,7 @@ end
   Student.create!({
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    email: hero_name.sub(" ", "_") + domain,
+    email: hero_name.split(" ").join("_") + domain,
     password: 'password',
     hero_name: hero_name,
     superpower: Faker::Superhero.power,
