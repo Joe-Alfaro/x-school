@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :teachers do
     resources :teams
   end
+
+  root to: "home#index"
 end
