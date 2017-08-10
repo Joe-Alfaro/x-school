@@ -5,6 +5,9 @@
       <% columns.each do |k, v| %>
         <th><%= v %></th>
       <% end %>
+      <th>
+      Add to Team
+      </th>
     </tr>
   </thead>
   <%= render partial: students, locals: {columns: columns} %>
