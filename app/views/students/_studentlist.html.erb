@@ -1,0 +1,11 @@
+<table id="student-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <% columns.each do |k, v| %>
+        <th><%= v %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <%= render partial: students, locals: {columns: columns} %>
+</table>
