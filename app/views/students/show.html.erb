@@ -2,7 +2,9 @@
 
 <div class="row">
 <div class="col-lg-6">
-
+  <% if @student.team %>
+    <h3>Belongs to Team: <a href="/teams/<%= @student.team.id %>"><%= @student.team.name %></a></h3>
+  <% end %>
 </div>
 <div class="col-lg-6">
   <%= link_to "Write a note about this student", new_student_note_path(@student), :class => ' btn btn-primary' %>
