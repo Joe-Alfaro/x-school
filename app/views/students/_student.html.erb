@@ -1,0 +1,16 @@
+<tr>
+  <td>
+    <a href="/students/<%= student.id %>"><%= student.first_name + ' ' + student.last_name %></a>
+  </td>
+  <% columns.each do |k, v| %>
+  <td>
+    <%= student.send(k) %>
+  </td>
+  <% end %>
+  <td>
+  <%= form_for(student, method: 'put') do |f| %>
+    <%= f.hidden_field :team_id, value: 9 %>
+    <%= f.submit 'Add to Team' %>
+  <% end %>
+</td>
+</tr>

@@ -1,0 +1,10 @@
+<%= form_for(:rule, url: rules_path, method: 'post') do |r| %>
+  Rule: <br><%= r.text_area :rule_string %><br>
+  <%= r.hidden_field :teacher_id, :value => 1 %>
+  <!-- Attribute : <#%= r.text_field :attribute %><br> -->
+  <!-- Value     : <#%= r.text_field :value %><br> -->
+  <!-- Criteria  : <#%= r.text_field :criteria %><br> -->
+  <!-- Modifier  : <#%= r.text_field :modifier %><br> -->
+  <!-- Active?   : <#%= r.check_box :active %><br> -->
+  <%= r.submit %>
+<% end %>

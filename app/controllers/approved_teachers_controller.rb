@@ -1,0 +1,2 @@
+class ApprovedTeachersController < ApplicationController
+end

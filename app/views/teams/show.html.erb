@@ -1,0 +1,15 @@
+<h1>Team <%= @team.name %></h1>
+
+<h2>Team Leader: <a href="/teachers/<%= @team.teacher.id %>"><%= @team.teacher.first_name + ' ' + @team.teacher.last_name %></a></h2>
+<h3>Average grade: <%= @stats[:avg] %>%</h3>
+
+<%= render partial: '/students/studentlist', locals: {students: @team.students,
+  columns: {:hero_name => 'Hero Name',
+   :superpower => 'Superpower',
+   :gender => 'Gender',
+   :grade_level => 'Grade Level',
+   :shirt_size => 'Shirt Size'}} %>
+
+<h2>Team Rules (Applicable To All Teams):</h2>
+<%= render partial: "rules/list" %>
+<%= link_to "Add New Rule", new_rule_path %>

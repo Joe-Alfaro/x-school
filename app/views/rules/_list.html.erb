@@ -1,0 +1,9 @@
+<% if @rules.length == 0 %>
+  <h5>NO CURRENT RULES</h5>
+<% else %>
+  <ul>
+  <% @rules.each do |rule| %>
+    <li>"<%= rule.rule_string %>" - <%= rule.teacher.hero_name %></li>
+  <% end %>
+  </ul>
+<% end %>
