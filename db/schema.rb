@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20170809223401) do
 
   create_table "users", force: :cascade do |t|
     t.string "email"
-    t.string "password_digest"
+    t.string "encrypted_password"
     t.string "first_name"
     t.string "last_name"
     t.string "hero_name"
@@ -96,8 +96,18 @@ ActiveRecord::Schema.define(version: 20170809223401) do
     t.bigint "team_id"
     t.string "shirt_size"
     t.string "type"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["team_id"], name: "index_users_on_team_id"
   end
 
