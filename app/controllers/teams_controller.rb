@@ -6,6 +6,9 @@ class TeamsController < ApplicationController
   end
 
   def show
+    @stats = {
+      :avg => @team.students.first.grades.sum(:score) / @team.students.first.grades.count
+    }
   end
 
   def new
