@@ -6,6 +6,7 @@ class TeamsController < ApplicationController
   end
 
   def show
+    @rules = Rule.all
   end
 
   def new
