@@ -4,7 +4,7 @@ class Student < User
   has_many :detentions
   has_one :teacher, through: :team
   has_many :sent_notes, class_name: "Note", foreign_key: :sender_id
-  has_many :received_notes, class_name: "Note", as: :noteable
+  has_many :received_notes, class_name: "Note", foreign_key: :noteable_id
 
   validates :grade_level, presence: true
   validates_inclusion_of :grade_level, in: 6..12

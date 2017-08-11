@@ -12,9 +12,11 @@ class NotesController < ApplicationController
     if params[:student_id]
       @recipient = Student.find(params[:student_id])
       @route = student_notes_path
+      @sender = Teacher.all.sample
     else
       @recipient = Teacher.find(params[:teacher_id])
       @route = teacher_notes_path
+      @sender = Student.all.sample
     end
     @note = Note.new
   end

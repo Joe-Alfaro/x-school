@@ -1,1 +1,11 @@
 <h1><%= @student.first_name + ' ' + @student.last_name %></h1>
+
+<div class="row">
+<div class="col-lg-6">
+
+</div>
+<div class="col-lg-6">
+  <%= link_to "Write a note about this student", new_student_note_path(@student), :class => ' btn btn-primary' %>
+  <br/><br/>
+  <%= render @student.received_notes %>
+</div>
