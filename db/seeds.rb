@@ -70,7 +70,7 @@ end
 #Team seeds
 4.times do
   Team.create!({
-    name: Faker::Superhero.suffix,
+    name: Faker::Superhero.descriptor,
     teacher_id: Teacher.all.sample.id
     })
 end
@@ -143,11 +143,30 @@ end
     })
 end
 
-# Rule.create!({
-#     teacher_id: 1,
-#     attribute: 'team.students.count',
-#     criteria: '>',
-#     value: '1',
-#     modifier: nil,
-#     active: 'true'
-#   })
+Rule.create!({
+    rule_string: "Students can not be all the same gender",
+    teacher_id: 1,
+    # attribute: 'team.students.count',
+    # criteria: '>',
+    # value: '1',
+    # modifier: nil,
+    # active: 'true'
+  })
+Rule.create!({
+    rule_string: "Teams' average grade score needs to be 80% +/- 5%",
+    teacher_id: 1,
+    # attribute: 'team.students.count',
+    # criteria: '>',
+    # value: '1',
+    # modifier: nil,
+    # active: 'true'
+  })
+Rule.create!({
+    rule_string: "A team can not have more than 15 detentions",
+    teacher_id: 1,
+    # attribute: 'team.students.count',
+    # criteria: '>',
+    # value: '1',
+    # modifier: nil,
+    # active: 'true'
+  })

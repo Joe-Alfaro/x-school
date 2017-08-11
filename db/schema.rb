@@ -54,12 +54,8 @@ ActiveRecord::Schema.define(version: 20170809223401) do
   end
 
   create_table "rules", force: :cascade do |t|
+    t.string "rule_string", null: false
     t.bigint "teacher_id", null: false
-    t.string "attribute", null: false
-    t.string "criteria", null: false
-    t.string "value", null: false
-    t.string "modifier", null: false
-    t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["teacher_id"], name: "index_rules_on_teacher_id"
