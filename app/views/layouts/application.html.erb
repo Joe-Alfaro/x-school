@@ -28,13 +28,15 @@
             <a class="nav-item nav-link" href="/teams">Teams</a>
             <a class="nav-item nav-link" href="/teachers">Teachers</a>
             <a class="nav-item nav-link" href="/students">Students</a>
+            <% if student_signed_in? || teacher_signed_in?  %>
             <a class="nav-item nav-link" href="/profile">Profile</a>
+            <% end %>
 
             <% if student_signed_in? %>
-            <%= button_to 'Log out', destroy_student_session_path, method: :delete %>
+            <p class="nav-item nav-link"><%= button_to 'Log out', destroy_student_session_path, method: :delete %></p>
             <% end %>
             <% if teacher_signed_in? %>
-            <%= button_to 'Log out', destroy_teacher_session_path, method: :delete %>
+            <p class="nav-item nav-link"><%= button_to 'Log out', destroy_teacher_session_path, method: :delete %></p>
             <% end %>
 
           </div>
