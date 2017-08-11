@@ -142,3 +142,12 @@ end
     sender_type: "Student"
     })
 end
+
+Rule.create!({
+    teacher_id: 1,
+    attribute: 'team.students.count',
+    criteria: '>',
+    value: '1',
+    modifier: nil,
+    active: 'true'
+  })

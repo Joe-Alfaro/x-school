@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+  before_action :authenticate_user!
   before_action :get_teams, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -9,6 +10,8 @@ class TeamsController < ApplicationController
     @stats = {
       :avg => @team.students.first.grades.sum(:score) / @team.students.first.grades.count
     }
+
+    @rules = Rule.all
   end
 
   def new
