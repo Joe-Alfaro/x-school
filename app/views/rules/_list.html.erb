@@ -1,0 +1,9 @@
+<% if @rules.length == 0 || @rules == nil %>
+  <h5>NO CURRENT RULES</h5>
+<% else %>
+  <ul>
+  <% @rules.each do |rule| %>
+    <li><%= rule.attribute %> must be <%= rule.criteria %> <%= rule.value %></li>
+  <% end %>
+  </ul>
+<% end %>
