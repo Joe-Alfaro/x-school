@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :students
   resources :teachers
   resources :teams
+  resources :rules
 end
