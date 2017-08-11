@@ -25,8 +25,10 @@
             <a class="nav-item nav-link" href="/teams">Teams</a>
             <a class="nav-item nav-link" href="/teachers">Teachers</a>
             <a class="nav-item nav-link" href="/students">Students</a>
-            <% if student_signed_in? || teacher_signed_in?  %>
-            <a class="nav-item nav-link" href="/profile">Profile</a>
+            <% if student_signed_in?  %>
+              <a class="nav-item nav-link" href="/students/ %>">Profile</a>
+            <% elsif teacher_signed_in? %>
+              <a class="nav-item nav-link" href="/teachers/">Profile</a>
             <% end %>
 
             <% if student_signed_in? %>
