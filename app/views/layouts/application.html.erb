@@ -14,9 +14,6 @@
 
   <body>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
       <div class="container">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,10 +30,10 @@
             <% end %>
 
             <% if student_signed_in? %>
-            <p class="nav-item nav-link"><%= button_to 'Log out', destroy_student_session_path, method: :delete %></p>
+            <%= button_to 'Log out', destroy_student_session_path, method: :delete, :class => "nav-item nav-link" %>
             <% end %>
             <% if teacher_signed_in? %>
-            <p class="nav-item nav-link"><%= button_to 'Log out', destroy_teacher_session_path, method: :delete %></p>
+            <%= button_to 'Log out', destroy_teacher_session_path, method: :delete, :class => "nav-item nav-link" %>
             <% end %>
 
           </div>
@@ -44,6 +41,10 @@
       </div>
     </nav>
     <div class="container">
+      <div class="application_flash">
+        <%= notice %>
+        <%= alert %>
+      </div>
       <%= yield %>
     </div>
   </body>

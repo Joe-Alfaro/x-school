@@ -1,4 +1,6 @@
-<div id="student-log-in">
+<div class="row">
+
+<div class="col-lg-6">
   <h2>Student Log In</h2>
 
   <%= form_for(:student, as: :student, url: session_path(:student)) do |f| %>
@@ -25,11 +27,11 @@
     </div>
 
   <% end %>
-
 </div>
-<br>
-<div id="teacher-log-in">
 
+<br>
+
+<div class="col-lg-6">
   <h2>Teacher Log In</h2>
 
   <%= form_for(:teacher, as:
@@ -57,5 +59,6 @@
     </div>
 
   <% end %>
+</div>
 
 </div>
