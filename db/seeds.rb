@@ -106,7 +106,7 @@ end
 end
 
 #Grades
-30.times do
+100.times do
   Grade.create!({
     score: rand(0..100),
     student_id: Student.all.sample.id
@@ -143,11 +143,11 @@ end
     })
 end
 
-Rule.create!({
-    teacher_id: 1,
-    attribute: 'team.students.count',
-    criteria: '>',
-    value: '1',
-    modifier: nil,
-    active: 'true'
-  })
+# Rule.create!({
+#     teacher_id: 1,
+#     attribute: 'team.students.count',
+#     criteria: '>',
+#     value: '1',
+#     modifier: nil,
+#     active: 'true'
+#   })

@@ -7,8 +7,13 @@ class TeamsController < ApplicationController
   end
 
   def show
+
+    @grades = @team.students.map {|i| i.grades[0]}
+    @scores = @grades.map {|i| i.score }
+    @total = @scores.inject(0){|sum,x| sum + x }
+
     @stats = {
-      :avg => @team.students.first.grades.sum(:score) / @team.students.first.grades.count
+      :avg => @total / @team.students.count
     }
 
     @rules = Rule.all
