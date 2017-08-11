@@ -6,8 +6,13 @@ Rails.application.routes.draw do
   devise_for :students
   devise_for :teachers
 
-  resources :students
-  resources :teachers
+  resources :students do
+    resources :notes
+  end
+  resources :teachers do
+    resources :notes
+  end
+
   resources :teams
   resources :rules
 end

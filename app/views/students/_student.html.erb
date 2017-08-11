@@ -7,4 +7,10 @@
     <%= student.send(k) %>
   </td>
   <% end %>
+  <td>
+  <%= form_for(student, method: 'put') do |f| %>
+    <%= f.hidden_field :team_id, value: 9 %>
+    <%= f.submit 'Add to Team' %>
+  <% end %>
+</td>
 </tr>

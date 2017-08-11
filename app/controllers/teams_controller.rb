@@ -7,6 +7,10 @@ class TeamsController < ApplicationController
   end
 
   def show
+    @stats = {
+      :avg => @team.students.first.grades.sum(:score) / @team.students.first.grades.count
+    }
+
     @rules = Rule.all
   end
 
@@ -15,14 +19,15 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.new(teacher_params)
+    @team = Team.create(teacher_params)
   end
 
   def edit
   end
 
   def update
-    @team = Team.update(teacher_params)
+    @team.update(teacher_params)
+    @team.save
   end
 
   def destroy
