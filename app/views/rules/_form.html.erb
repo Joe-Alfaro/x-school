@@ -1,8 +1,9 @@
 <%= form_for :rule do |r| %>
-  Attribute : <%= r.text_field :attribute %><br>
-  Value     : <%= r.text_field :value %><br>
-  Criteria  : <%= r.text_field :criteria %><br>
-  Modifier  : <%= r.text_field :modifier %><br>
-  Active?   : <%= r.check_box :active %><br>
+  Rule : <%= r.text_area :rule_string %>
+  <!-- Attribute : <#%= r.text_field :attribute %><br> -->
+  <!-- Value     : <#%= r.text_field :value %><br> -->
+  <!-- Criteria  : <#%= r.text_field :criteria %><br> -->
+  <!-- Modifier  : <#%= r.text_field :modifier %><br> -->
+  <!-- Active?   : <#%= r.check_box :active %><br> -->
   <%= r.submit %>
 <% end %>
