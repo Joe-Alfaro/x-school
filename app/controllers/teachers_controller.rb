@@ -1,4 +1,5 @@
 class TeachersController < ApplicationController
+  before_action :authenticate_user!
   before_action :get_teacher, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -20,7 +21,8 @@ class TeachersController < ApplicationController
   end
 
   def update
-    @teacher = Teacher.update(teacher_params)
+    @teacher.update(teacher_params)
+    @teacher.save
   end
 
   def destroy

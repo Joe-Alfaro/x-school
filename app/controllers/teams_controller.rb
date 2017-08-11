@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+  before_action :authenticate_user!
   before_action :get_teams, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -6,6 +7,15 @@ class TeamsController < ApplicationController
   end
 
   def show
+
+    @grades = @team.students.map {|i| i.grades[0]}
+    @scores = @grades.map {|i| i.score }
+    @total = @scores.inject(0){|sum,x| sum + x }
+
+    @stats = {
+      :avg => @total / @team.students.count
+    }
+
     @rules = Rule.all
   end
 
@@ -14,14 +24,15 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.new(teacher_params)
+    @team = Team.create(teacher_params)
   end
 
   def edit
   end
 
   def update
-    @team = Team.update(teacher_params)
+    @team.update(teacher_params)
+    @team.save
   end
 
   def destroy

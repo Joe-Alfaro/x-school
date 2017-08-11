@@ -1,1 +1,14 @@
 <h1><%= @teacher.first_name + ' ' + @teacher.last_name %></h1>
+
+<div class="row">
+<div class="col-lg-6">
+<% if @teacher.team %>
+<h3>Manages Team: <a href="/teams/<%= @teacher.team.id %>"><%= @teacher.team.name %></a></h3>
+<% end %>
+</div>
+
+<div class="col-lg-6">
+  <%= link_to "Send this teacher a note", new_teacher_note_path(@teacher), :class => ' btn btn-primary' %>
+  <br/><br/>
+  <%= render @teacher.received_notes %>
+</div>

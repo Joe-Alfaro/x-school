@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  before_action :authenticate_user!
   before_action :get_student, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -13,14 +14,16 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.new(student_params)
+    @student = Student.create(student_params)
   end
 
   def edit
   end
 
   def update
-    @student = Student.update(student_params)
+    @student.update(student_params)
+    @student.save
+    redirect_to student_path
   end
 
   def destroy
@@ -32,7 +35,7 @@ class StudentsController < ApplicationController
 
   private
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :hero_name, :superpower, :gender, :grade_level, :shirt_size)
+      params.require(:student).permit(:first_name, :last_name, :hero_name, :team_id, :superpower, :gender, :grade_level, :shirt_size)
     end
 
 end
